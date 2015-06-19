@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{basics.name}}</title>
+    <link href="http://bootswatch.com/lumen/bootstrap.min.css" rel="stylesheet" />
+	  <link href="./style" rel="stylesheet" />
+  
+  </head>
+  <body>
+    <div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+        <h1>{{basics.name}}<h1>
+
+        <h2>{{basics.location.city}}</h2>
+        </div>
+        <div class="col-md-6 col-sm-12">
+        <img class="media-object img-circle pull-right" data-src="holder.js/64x64" alt="64x64" src="{{basics.picture}}" style="width: 100px; height: 100px; margin-top: 20px;">
+
+        </div>
+        </div>
+      <hr style="color: #ccc; height: 4px;" />
+      <section class="row">
+        <header class="col-md-3">
+          <h3>About</h3>
+        </header>
+        <div class="col-md-9">
+        <p>{{basics.summary}}</p>
+        {{#if basics.phone}}
+        <strong>Phone:</strong> {{basics.phone}} <br />
+        {{/if}}
+        {{#if basics.email}}
+        <strong>Email:</strong> {{basics.email}}<br />
+        {{/if}}
+        {{#if profiles.twitter}}
+        <strong>Twitter:</strong> <a href="http://twitter.com/{{.}}">{{.}}</a><br />
+        {{/if}}
+        {{#if profiles.github}}
+        <strong>Github:</strong> <a href="http://github.com/{{.}}">{{.}}</a><br />
+
+        {{/if}}
+        </div>
+      </section>
+      {{#if work.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>工作經驗</h3>
+        </header>
+        <div class="col-md-9">
+          <div class="skills">
+            {{#each work}}
+            <h3>{{company}}</h3>
+            <strong>{{position}}</strong>
+            <p>{{startDate}} - {{endDate}}</p>
+            <p>{{summary}}</p>
+            <ul>
+              {{#each highlights}}
+              <li>{{.}}</li>
+              {{/each}}
+            </ul>
+            <hr />{{/each}}
+          </div>
+        </div>
+      </section>
+      {{/if}} 
+
+      {{#if education.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>學歷</h3>
+        </header>
+        <div class="col-md-9">
+          <div class="skills">
+            {{#each education}}
+            <h3>{{institution}}</h3>
+            <h4>{{studyType}}</h4>
+            <p>{{startDate}} - {{endDate}}</p>
+            <p>{{summary}}</p>
+            <ul>
+              {{#each courses}}
+              <li>{{.}}</li>
+              {{/each}}
+            </ul>
+            <hr />
+            {{/each}}
+          </div>
+        </div>
+      </section>
+      {{/if}} 
+      {{#if skills.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>工作技能</h3>
+        </header>
+        <div class="col-md-9">
+          <div class="row-fluid skills">
+            {{#each skills}}
+            <ul class="col-md-6">
+
+              <li>
+                <h4>{{name}}</h4>
+                <h5>{{level}}</h5>
+                <ul>
+                  {{#each keywords}}
+                  <li>{{.}}</li>
+                  {{/each}}
+                </ul>
+              </li>
+            </ul>
+            {{/each}}
+          </div>
+        </div>
+      </section>
+      {{/if}}
+      {{#if references.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>參考</h3>
+        </header>
+        <div class="col-md-9">
+          <div class="row-fluid skills">
+            {{#each references}}
+
+            <p>{{reference}} -
+              <strong>{{name}}</strong>
+            </p>
+            {{/each}}
+          </div>
+        </div>
+      </section>
+      {{/if}}
+
+    </div>
+  </div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </body>
+</html>
