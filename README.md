@@ -1,10 +1,10 @@
-# resume-theme-paper
+# resume-theme-modern
 
-resume from JSONresume theme paper, original repo 
+resume from JSONresume theme modern, original repo 
 
-https://github.com/TimDaub/jsonresume-theme-paper
+https://github.com/jsonresume/jsonresume-theme-modern
 
-[Theme Preview](http://themes.jsonresume.org/theme/paper)
+[Theme Preview](http://themes.jsonresume.org/theme/modern)
 
 ## License
 
