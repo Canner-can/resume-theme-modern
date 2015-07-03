@@ -37,11 +37,11 @@
         {{#if basics.email}}
         <strong>Email:</strong> {{basics.email}}<br />
         {{/if}}
-        {{#if profiles.twitter}}
-        <strong>Twitter:</strong> <a href="http://twitter.com/{{.}}">{{.}}</a><br />
+        {{#if basics.twitter}}
+        <strong>Twitter:</strong> <a href="http://twitter.com/{{basics.twitter}}">{{basics.twitter}}</a><br />
         {{/if}}
-        {{#if profiles.github}}
-        <strong>Github:</strong> <a href="http://github.com/{{.}}">{{.}}</a><br />
+        {{#if basics.github}}
+        <strong>Github:</strong> <a href="http://github.com/{{basics.github}}">{{basics.github}}</a><br />
 
         {{/if}}
         </div>
@@ -60,7 +60,7 @@
             <p>{{summary}}</p>
             <ul>
               {{#each highlights}}
-              <li>{{.}}</li>
+              <li>{{this}}</li>
               {{/each}}
             </ul>
             <hr />{{/each}}
@@ -83,7 +83,7 @@
             <p>{{summary}}</p>
             <ul>
               {{#each courses}}
-              <li>{{.}}</li>
+              <li>{{this}}</li>
               {{/each}}
             </ul>
             <hr />
@@ -107,16 +107,18 @@
                 <h5>{{level}}</h5>
                 <ul>
                   {{#each keywords}}
-                  <li>{{.}}</li>
+                  <li>{{this}}</li>
                   {{/each}}
                 </ul>
               </li>
             </ul>
+            <hr />
             {{/each}}
           </div>
         </div>
       </section>
       {{/if}}
+
       {{#if references.length}}
       <section class="row">
         <header class="col-md-3">
